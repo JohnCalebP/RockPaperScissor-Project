@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissor Game!</title>
+    <Style>
+      body {
+        background-color: black;
+      }
+      h3 {
+        color: White;
+        text-align: center;
+      }
+      button {
+        color: white; 
+        background-color: green;
+        border: 0;
+        text-align: center;
+        font-size: 50px;
+        height:200px;
+        width: 200px;
+        position: relative;
+        margin: 10px;
+      }
+      button:hover {
+        background-color: lightgreen;
+        cursor: pointer;
+      }
+      div {
+        text-align: center;
+      }
+    </Style>
+  </head>
+  <body>
+    <h3>Rock Paper Scissor</h3>
+    <div>
+    <button onclick="
+      let userMoveRock = 'Rock';
+      game(userMoveRock);
+    ">Rock</button>
+
+    <button onclick="
+      let userMovePaper = 'Paper';
+      game(userMovePaper);
+    ">Paper</button>
+
+    <button onclick="
+      let userMoveScissor = 'Scissor';
+      game(userMoveScissor);
+    ">Scissor</button>
+    </div>
+
+    <script>
+      function game (userMove) {
+      //Computer Move Choosing Logic
+      let computerMove = Math.random();
+      let computerMoveLogic ='';
+      if (computerMove <= 0.3)
+      {
+        computerMoveLogic = 'Rock';
+      } else if (computerMove > 0.3 && computerMove <= 0.6)
+      {
+        computerMoveLogic = 'Paper';
+      } else if (computerMove > 0.6 && computerMove <= 1.0) 
+      {
+        computerMoveLogic = 'Scissor';
+      } else {alert('Error');}
+
+      //Player vs Computer Logic (Paper)
+      if (userMove === 'Paper' && computerMoveLogic === 'Paper')
+      {
+        alert(`Player choose ${userMove} and Computer choose ${computerMoveLogic}. The game is Draw!` );
+      }
+      else if (userMove === 'Paper' && computerMoveLogic === 'Rock')
+      {
+        alert(`Player choose ${userMove} and Computer choose ${computerMoveLogic}. Players Wins!` );
+      }
+      else if (userMove === 'Paper' && computerMoveLogic === 'Scissor')
+      {
+        alert(`Player choose ${userMove} and Computer choose ${computerMoveLogic}. Computer Wins!` );
+      }
+      //Player vs Computer Logic (Rock)
+      if (userMove === 'Rock' && computerMoveLogic === 'Rock')
+      {
+        alert(`Player choose ${userMove} and Computer choose ${computerMoveLogic}. The game is Draw!` );
+      }
+      else if (userMove === 'Rock' && computerMoveLogic === 'Scissor')
+      {
+        alert(`Player choose ${userMove} and Computer choose ${computerMoveLogic}. Players Wins!` );
+      }
+      else if (userMove === 'Rock' && computerMoveLogic === 'Paper')
+      {
+        alert(`Player choose ${userMove} and Computer choose ${computerMoveLogic}. Computer Wins!` );
+      }
+      //Player vs Computer Logic (Scissor)
+      if (userMove === 'Scissor' && computerMoveLogic === 'Scissor')
+      {
+        alert(`Player choose ${userMove} and Computer choose ${computerMoveLogic}. The game is Draw!` );
+      }
+      else if (userMove === 'Scissor' && computerMoveLogic === 'Paper')
+      {
+        alert(`Player choose ${userMove} and Computer choose ${computerMoveLogic}. Players Wins!` );
+      }
+      else if (userMove === 'Scissor' && computerMoveLogic === 'Rock')
+      {
+        alert(`Player choose ${userMove} and Computer choose ${computerMoveLogic}. Computer Wins!` );
+      }
+      //rock = 0.3 , paper = 0.4 to 0.6, scissor = 0.7 to 1.0
+      }
+    </script>
+
+  </body>
+</html>
